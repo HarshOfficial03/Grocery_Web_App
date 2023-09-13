@@ -1,0 +1,130 @@
+info:
+  _postman_id: 9dbce83c-aa85-4a29-af39-e58bddec068d
+  name: Mad1 Grocerystore
+  schema: https://schema.getpostman.com/json/collection/v2.1.0/collection.json
+  _exporter_id: '28806322'
+item:
+  - name: AddCategory
+    request:
+      method: POST
+      header: []
+      body:
+        mode: formdata
+        formdata:
+          - key: vname
+            value: Vegetables
+            type: text
+      url:
+        raw: http://127.0.0.1:5000/categoryapi
+        protocol: http
+        host:
+          - '127'
+          - '0'
+          - '0'
+          - '1'
+        port: '5000'
+        path:
+          - categoryapi
+      description: Used in adding and editing new category
+    response: []
+  - name: EditCategory
+    request:
+      method: POST
+      header: []
+      body:
+        mode: formdata
+        formdata:
+          - key: vname
+            value: Furniture
+            type: text
+      url:
+        raw: http://127.0.0.1:5000/categoryapi/1
+        protocol: http
+        host:
+          - '127'
+          - '0'
+          - '0'
+          - '1'
+        port: '5000'
+        path:
+          - categoryapi
+          - '1'
+      description: >-
+        For editing the category and we are passing the id of category as qurey
+        which we want to edit the name amd sending name as body form-data
+    response: []
+  - name: Createproduct
+    request:
+      method: POST
+      header: []
+      body:
+        mode: formdata
+        formdata:
+          - key: sname
+            value: fv
+            type: text
+          - key: expiry
+            value: '2023-02-05'
+            type: text
+          - key: radio
+            value: ''
+            type: text
+          - key: quantity
+            value: '100'
+            type: text
+          - key: price
+            value: '1000'
+            type: text
+      url:
+        raw: http://127.0.0.1:5000/createproductapi/1
+        protocol: http
+        host:
+          - '127'
+          - '0'
+          - '0'
+          - '1'
+        port: '5000'
+        path:
+          - createproductapi
+          - '1'
+      description: Add Product into category and id is given ahead
+    response: []
+  - name: editproduct
+    request:
+      method: POST
+      header: []
+      body:
+        mode: formdata
+        formdata:
+          - key: sname
+            value: fv
+            type: text
+          - key: expiry
+            value: '2023-02-05'
+            type: text
+          - key: radio
+            value: ''
+            type: text
+          - key: quantity
+            value: '100000'
+            type: text
+          - key: price
+            value: '1000'
+            type: text
+      url:
+        raw: http://127.0.0.1:5000//editproductapi/1
+        protocol: http
+        host:
+          - '127'
+          - '0'
+          - '0'
+          - '1'
+        port: '5000'
+        path:
+          - ''
+          - editproductapi
+          - '1'
+      description: >-
+        Edit Product and id is given ahead to find in which product we are
+        editing
+    response: []

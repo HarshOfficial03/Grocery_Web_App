@@ -1,0 +1,83 @@
+{% extends 'base.html' %} {% block content%}
+
+<body>
+  <div>
+    <div class="centerElement">
+      <h4>ADD PRODUCT</h4>
+    </div>
+    <div class="centerElement">
+      <form method="post" action="/createproductapi/{{ edit_mode }}">
+        <div class="mb-3">
+          <table>
+            <tr>
+              <td>
+                <label for="exampleInputEmail1" class="form-label"
+                  >Product Name:</label
+                >
+              </td>
+              <td>
+                <input
+                  type="text"
+                  id="exampleInputEmail1"
+                  name="sname"
+                  aria-describedby="emailHelp"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="exampleInputPassword1" class="form-label"
+                  >Expiry Date:</label
+                >
+              </td>
+              <td>
+                <input type="date" id="exampleInputPassword1" name="expiry" />
+              </td>
+              <td>
+                N/A<input
+                  type="radio"
+                  id="exampleInputPassword1"
+                  name="radio"
+                  value="N/A"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="exampleInputPassword1" class="form-label"
+                  >Price:</label
+                >
+              </td>
+              <td>
+                <input type="number" id="exampleInputPassword1" name="price" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="exampleInputPassword1" class="form-label"
+                  >Quantity:</label
+                >
+              </td>
+              <td>
+                <input
+                  type="number"
+                  id="exampleInputPassword1"
+                  name="quantity"
+                />
+              </td>
+            </tr>
+          </table>
+
+          <div class="footerBtn">
+            <button type="submit" class="btn btn-primary">ADD</button>
+          </div>
+        </div>
+        <!-- <div class="mb-3">
+                  
+                  
+                </div> -->
+      </form>
+    </div>
+  </div>
+</body>
+{% endblock %}

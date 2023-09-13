@@ -1,0 +1,34 @@
+{% extends "base.html" %} {% block title %}Search {{ query }}{% endblock %} {%
+block content %}
+
+<body>
+  <div class="container">
+    <div class="row mainDiv">
+      <div class="venueDiv">
+        <div class="venueBox">
+          <h3>{{cat.name}}</h3>
+          {% if pro%}
+          <div class="hk">
+            {% for pro1 in pro %} {% if pro1.category_id==cat.id%}
+            <div class="venueInnerbox">
+              <h5>{{pro1.name}}</h5>
+              <p>Price: {{pro1.price}}</p>
+              <p>Expiry: {{pro1.expirydate}}</p>
+              <div class="venueFooter">
+                <a href="/bookticket/{{pro1.id}}/{{cat.id}}"
+                  ><button type="button" class="btn btn-danger">Buy</button></a
+                >
+              </div>
+            </div>
+            {% endif %} {% endfor %}
+          </div>
+          {% else %}
+          <p>No show created</p>
+          {% endif%}
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+{% endblock %}

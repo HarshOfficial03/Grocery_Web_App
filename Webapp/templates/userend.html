@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+
+
+  <body>
+     
+        <div class="container">
+          <div class="row mainDiv">
+            {% for cat1 in cat%}
+            <div class="venueDiv">
+              <div class="venueBox">
+          <h3>{{cat1.name}}</h3>
+          {% if pro%}
+            <div class="hk">
+            {% for pro1 in pro %}
+              {% if pro1.category_id==cat1.id%}
+              
+              <div class="venueInnerbox">
+              <h5>{{pro1.name}}</h5>
+              {% if pro1.quantity!=0 %}
+                <div class="venueFooter"><a href="/bookticket/{{pro1.id}}/{{cat1.id}}"><button type="button" class="btn btn-danger">Buy</button></a></div>
+              {% else %}
+              <div class="venueFooter"><button type="button" class="btn btn-secondary">Out Of Stock</button></div>
+              {% endif %}
+              </div>
+            
+                  {% endif%}
+                      {% endfor %}
+            
+            </div>
+                      {% else %}
+              <p>No show created</p>
+                  {% endif%}
+              </div>
+                
+              </div> 
+
+          
+            {% endfor %}
+          </div>
+        </div>
+   
+        
+    
+    
+    
+    
+
+  </body>
+</html>
+{% endblock %}

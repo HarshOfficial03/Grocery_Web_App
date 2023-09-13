@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block content%}
+  
+  <body>
+    <div>
+    <div class="centerElement">
+        <h4>CART</h4>
+    </div>
+    
+{% for i in bookings%}
+<div class="centerElement">
+         
+                <div class="mb-3">
+                    <table>
+                    
+                        <tr>
+                            <td><label for="exampleInputPassword1" class="form-label">Product name:</label></td>
+                            <td><input type="text" id="exampleInputPassword1" name="ticketsno" value={{i.sname}} readonly></td>
+                        </tr>
+                        <tr>
+                            <td><label for="exampleInputPassword1" class="form-label">Quantity:</label></td>
+                            <td><input type="text" id="exampleInputPassword1" name="quantity" value={{i.notickets}} readonly></td>
+                        </tr>
+    
+                        <tr>
+                            <td><label for="exampleInputPassword1" class="form-label">Total:</label></td>
+                            <td><input type="input" id="exampleInputPassword1" name="total" value={{i.total}} readonly></td>
+                        </tr>
+                    </table>
+                 
+                  
+                </div>
+              
+                  
+                  
+                </div>
+                
+                
+            
+
+                  
+        </div>
+        {% endfor %}
+        <div class="centerElement">
+      
+        
+        <tr>
+            <td><label for="exampleInputPassword1" class="form-label">Total Amount:</label></td>
+            <td><input type="input" id="exampleInputPassword1" name="total" value={{counter}} readonly></td>
+        </tr>
+        
+        </div>
+        <form method="post">
+        <div class="footerBtn"><button type="submit" class="btn btn-primary">Confirm your cart</button></div>
+        
+        <br>
+        </form>
+
+    </div>
+  </body>
+{% endblock %}

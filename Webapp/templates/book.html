@@ -1,0 +1,79 @@
+{% extends 'base.html' %} {% block content%}
+
+<body>
+  <div>
+    <div class="centerElement">
+      <h4>Product Name: {{bookpro.name}}, Category: {{bookcat.name}}</h4>
+    </div>
+    <div class="centerElement">
+      <form method="post">
+        <div class="mb-3">
+          <table>
+            <tr>
+              <h3>Stock Available: {{bookpro.quantity}}</h3>
+            </tr>
+            <tr>
+              <h3>Expiry Date: {{bookpro.expirydate}}</h3>
+            </tr>
+            <tr>
+              <td>
+                <label for="exampleInputPassword1" class="form-label"
+                  >Quantity:</label
+                >
+              </td>
+              <td>
+                <input
+                  type="number"
+                  id="exampleInputPassword1"
+                  name="ticketsno"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="exampleInputPassword1" class="form-label"
+                  >Price:</label
+                >
+              </td>
+              <td>
+                <input
+                  type="text"
+                  id="exampleInputPassword1"
+                  name="timing"
+                  value="{{bookpro.price}} Rs"
+                  readonly
+                />
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <label for="exampleInputPassword1" class="form-label"
+                  >Total:</label
+                >
+              </td>
+              <td>
+                <input
+                  type="input"
+                  id="exampleInputPassword1"
+                  name="total"
+                  value="Quantity * {{bookpro.price}} Rs"
+                  readonly
+                />
+              </td>
+            </tr>
+          </table>
+
+          <div class="footerBtn">
+            <button type="submit" class="btn btn-primary">Add to Cart</button>
+          </div>
+        </div>
+        <!-- <div class="mb-3">
+                  
+                  
+                </div> -->
+      </form>
+    </div>
+  </div>
+</body>
+{% endblock %}

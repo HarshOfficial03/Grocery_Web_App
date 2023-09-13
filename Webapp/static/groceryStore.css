@@ -1,0 +1,61 @@
+.centerElement img{
+    width: 50px;
+}
+.centerElement{
+    
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+/* .tableForm td{
+    display: flex;
+    justify-content: right;
+} */
+.footerBtn{
+    display: flex;
+    justify-content: center;
+    margin-top: 12px;
+}
+.venueBox{
+    border: 1px solid black;
+    padding: 12px;
+    border-radius: 20px;
+    background-color: #e6dddd;
+}
+.venueCenterElement{
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    padding-top: 6px;
+    /* margin-top: 160px;     */
+}
+.venueCenterElement img{
+    width: 40px;
+}
+.venueFooter{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+.venueInnerbox{
+    border: 1px solid black;
+    padding: 6px;
+    background-color: white;
+    width: max-content;
+}
+.col-lg-3 {
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%;
+    padding-top: 4%;
+}
+.hk{
+    display:flex;
+    gap: 20px;
+}
+.mainDiv{
+    display: flex;
+    gap: 20px;
+    margin-top: 15px;
+}

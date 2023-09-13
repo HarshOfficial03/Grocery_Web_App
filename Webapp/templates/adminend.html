@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block title %}Admin Page{% endblock %}
+{% block content %}
+
+</head>
+  <body>
+    <h1>Grocery Store Mangement</h1>
+{% if var=="false" %}
+    <div class="centerElement"><a href="/createcategory"><img src="{{url_for('static', filename='circle_icon.svg')}}"></a></div>
+    <div>
+      <div><h4>No Category Added.</h4></div>
+        
+      {% elif var == "true" %}
+     
+        <div class="container">
+          <!-- <div class="row"> -->
+          <div class="row mainDiv">
+      {% for cat1 in cat%}
+            <!-- <div class="col-lg-3"> -->
+            <div class="venueDiv">
+              <div class="venueBox">
+          <h3>{{cat1.name}}</h3>
+          {% if pro%}
+          <div class="hk">
+            {% for pro1 in pro %}
+                      {% if pro1.category_id==cat1.id%}
+                  <!--<div class="col-lg-3">-->
+                  <div class="venueInnerbox">
+                  <h5>{{pro1.name}}</h5>
+                  <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Actions
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="/editproduct/{{pro1.id}}">Edit</a>
+                      <a class="dropdown-item" href="/deleteproduct/{{pro1.id}}">Delete</a>
+                      
+                    </div>
+                  </div>
+                    
+                </div>
+                      <!--</div>-->
+                      {% endif %}
+                          {% endfor %}
+                  {% else %}
+              <p>No Producted Added</p>
+                  {% endif%}
+              </div>
+                {% if var=="false"%}
+                
+                {% else%}
+                <div class="venueCenterElement"><a href="/createproduct/{{cat1.id}}"><img src="{{url_for('static', filename='circle_icon.svg')}}"></a></div>
+                <div class="venueFooter">
+                  <a href="/editcategory/{{cat1.id}}"><button type="button" class="btn btn-warning">Edit</button></a>
+                  <a href="/deletecategory/{{cat1.id}}"><button type="button" foremethod="post" class="btn btn-danger">Delete</button></a>
+                </div>
+              {% endif %}
+              </div>
+
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="centerElement"><a href="/createcategory"><img src="{{url_for('static', filename='circle_icon.svg')}}"></a></div>
+        <div>
+       
+       {% endif %} 
+        
+        
+    </div>
+    
+    
+    
+
+  </body>
+</html>
+{% endblock %}

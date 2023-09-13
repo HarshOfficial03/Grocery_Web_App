@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content%}
+<body>
+    {% if bookings%}
+    <div class="accordion accordion-flush" id="accordionExample">
+    {% for i in bookings%}
+   
+   
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Product name:{{i.pname}}
+              catagory:{{i.cname}}
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+            <div class="accordion-body">                                                                    
+              <strong>Quantity: {{i.quantity}}</strong>                                               
+              <strong>Total Price: {{i.total}}</strong>                                                                                                               
+            </div>
+          </div>
+        </div>  
+    
+    {% endfor%}
+  
+    <strong><h2>Total: {{overall}}</h2></strong> 
+  </div>
+    {% else %}
+    <h2> NO BOOKINGS </h2>
+  </div>
+    {% endif %}
+</body>
+
+{% endblock %}
